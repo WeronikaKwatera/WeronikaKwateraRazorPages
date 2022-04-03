@@ -1,0 +1,56 @@
+﻿@page
+@model WeronikaKwateraRazorPagesFINAL.Pages.Animals.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Animals</h1>
+@if (Model.Message != null)
+{
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        @Model.Message
+    </div>
+}
+@if (Model.Animals != null && Model.Animals.Count > 0)
+{
+    <form method="post">
+        <table class="table table-condensed table-hover">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    BirthDate
+                </th>
+                <th>
+
+                </th>
+            </tr>
+            @foreach (var item in Model.Animals)
+            {
+                <tr>
+                    <th>
+                        @item.AnimalID
+                    </th>
+                    <th>
+                        @item.AnimalName
+                    </th>
+                    <th>
+                        @item.BirthDate
+                    </th>
+                    <th>
+                        <button asp-page-handler=”Delete” asp-route-id=”@item.AnimalID” class="btn btn-danger">usun</button>
+                    </th>
+                </tr>
+            }
+        </table>
+        </form>
+        }
+ 
+

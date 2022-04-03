@@ -1,0 +1,38 @@
+﻿@page
+@model WeronikaKwateraRazorPagesFINAL.Pages.Animals.createModel
+@{
+    ViewData["Title"] = "create";
+}
+
+<h1></h1>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        @Model.Message
+    </div>
+}
+
+<h2> Dodaj zwierzatko</h2>
+<div style=" border:1px solid #bbb9b9;border-radius:5px;">
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="animal.AnimalID"> </label>
+            <input asp-for="animal.AnimalID" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="animal.AnimalName"> </label>
+            <input asp-for="animal.AnimalName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="animal.BirthDate"> </label>
+            <input asp-for="animal.BirthDate" class="form-control" />
+        </div>
+        <input type="submit" value="Create" class="btn btn-sm btn-primary" />
+    </form>
+
+</div>
